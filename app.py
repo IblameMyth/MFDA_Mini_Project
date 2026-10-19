@@ -21,6 +21,7 @@ def static_root(filename):
     return send_from_directory(BASE_DIR, filename)
 
 @app.route("/api/data", methods=["GET"])
+@app.route("/api/index.py", methods=["GET"])
 def get_data():
     with DATA_LOCK:
         if not DATA_FILE.exists():
@@ -32,6 +33,7 @@ def get_data():
     return jsonify(payload)
 
 @app.route("/api/data", methods=["POST"])
+@app.route("/api/index.py", methods=["POST"])
 def save_data():
     payload = request.get_json(silent=True)
     if not isinstance(payload, dict):
