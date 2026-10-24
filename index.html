@@ -87,7 +87,7 @@ transition:.2s}
 display:inline-block;
 width:26px;
 color:#7f929e;
-font-size:15px}
+font:9px 'DM Mono',monospace}
 .nav:hover,.nav.active {
 background:#17242d;
 border-color:#2a3d49;
@@ -99,10 +99,20 @@ color:var(--green)}
 .sidebar-bottom {
 margin-top:auto;
 display:grid;
-grid-template-columns:1fr 28px 1fr;
+grid-template-columns:1fr;
 align-items:center;
-gap:3px;
 padding-top:20px}
+.research-note {
+border-top:1px solid var(--line);
+padding:14px 10px 0;
+font:9px 'DM Mono',monospace;
+letter-spacing:1px;
+color:var(--green)}
+.research-note small {
+display:block;
+margin-top:7px;
+color:var(--muted);
+letter-spacing:.3px}
 .rival-badge {
 border:1px solid #3c4950;
 padding:10px 7px 8px;
@@ -466,27 +476,25 @@ display:none}
 <body>
   <div class="shell">
     <aside class="sidebar">
-      <div class="brand-mark">M F D A</div>
-      <div class="brand">DEMOGRAPHIC<br><b>INTELLIGENCE</b></div>
+      <div class="brand-mark">MFDA</div>
+      <div class="brand">GLOBAL DEMOGRAPHICS<br><b>RESEARCH MONITOR</b></div>
       <div class="side-rule"></div>
-      <div class="side-label">ANALYSIS ZONE</div>
-      <button class="nav active" data-target="overview"><span>◈</span> Overview</button>
-      <button class="nav" data-target="growth"><span>↗</span> Population Growth</button>
-      <button class="nav" data-target="age"><span>◉</span> Age Distribution</button>
-      <button class="nav" data-target="migration"><span>⇄</span> Migration Patterns</button>
-      <button class="nav" data-target="urban"><span>▦</span> Urbanization</button>
+      <div class="side-label">REPORT SECTIONS</div>
+      <button class="nav active" data-target="overview"><span>01</span> Executive summary</button>
+      <button class="nav" data-target="growth"><span>02</span> Population growth</button>
+      <button class="nav" data-target="age"><span>03</span> Age structure</button>
+      <button class="nav" data-target="migration"><span>04</span> Migration patterns</button>
+      <button class="nav" data-target="urban"><span>05</span> Urbanization trends</button>
       <div class="sidebar-bottom">
-        <div class="rival-badge asta">ASTA <small>LIMIT BREAK</small></div>
-        <div class="versus">VS</div>
-        <div class="rival-badge yuno">YUNO <small>STAR MAGIC</small></div>
+        <div class="research-note"><b>GLOBAL SCOPE</b><small>6 reference populations</small></div>
       </div>
     </aside>
 
     <main class="main">
       <header class="topbar">
         <div>
-          <div class="eyebrow">GLOBAL RESEARCH DIVISION <span class="live-dot"></span> LIVE DASHBOARD</div>
-          <h1>World Population <em>&amp;</em> Demographic Analysis</h1>
+          <div class="eyebrow">INTERNATIONAL RESEARCH ORGANIZATION <span class="live-dot"></span> LIVE REPORT</div>
+          <h1>Population <em>&amp;</em> Demographic Change</h1>
         </div>
         <div class="top-controls">
           <label for="countrySelect">REGION / COUNTRY</label>
@@ -497,9 +505,9 @@ display:none}
 
       <section class="hero">
         <div class="hero-copy">
-          <div class="hero-tag"></div>
-          <h2>Understand the<br><span>shape of humanity.</span></h2>
-          <p>Population growth · age distributions · migration patterns · urbanization trends</p>
+          <div class="hero-tag">GLOBAL DEMOGRAPHIC OBSERVATORY / 2026 EDITION</div>
+          <h2>Demographic change,<br><span>measured clearly.</span></h2>
+          <p>Interactive evidence on population growth, age structure, migration, and urbanization.</p>
         </div>
         <div class="grimoire" aria-hidden="true">
           <div class="circle circle-one"></div><div class="circle circle-two"></div>
@@ -518,23 +526,23 @@ display:none}
 
       <section class="chart-grid" id="growth">
         <article class="panel panel-wide">
-          <div class="panel-heading"><div><div class="panel-kicker">01 / GROWTH TRAJECTORY</div><h3>Population over time</h3></div><span class="panel-stamp">ANTI-MAGIC DATA</span></div>
+          <div class="panel-heading"><div><div class="panel-kicker">02 / POPULATION GROWTH</div><h3>Population over time</h3></div><span class="panel-stamp">1900–2026 · BILLIONS</span></div>
           <div id="populationChart" class="chart"></div>
         </article>
         <article class="panel" id="age">
-          <div class="panel-heading"><div><div class="panel-kicker">02 / GENERATIONAL BALANCE</div><h3>Age distribution</h3></div></div>
+          <div class="panel-heading"><div><div class="panel-kicker">03 / AGE STRUCTURE</div><h3>Age distribution</h3></div></div>
           <div id="ageChart" class="chart"></div>
         </article>
         <article class="panel" id="migration">
-          <div class="panel-heading"><div><div class="panel-kicker">03 / MOVEMENT</div><h3>Migration patterns</h3></div></div>
+          <div class="panel-heading"><div><div class="panel-kicker">04 / HUMAN MOBILITY</div><h3>Migration patterns</h3></div></div>
           <div id="migrationChart" class="chart"></div>
         </article>
         <article class="panel panel-wide" id="urban">
-          <div class="panel-heading"><div><div class="panel-kicker">04 / CITY EXPANSION</div><h3>Urbanization comparison</h3></div><span class="panel-stamp">REGIONAL SCAN</span></div>
+          <div class="panel-heading"><div><div class="panel-kicker">05 / URBAN TRANSITION</div><h3>Urbanization comparison</h3></div><span class="panel-stamp">REFERENCE COUNTRIES</span></div>
           <div id="urbanChart" class="chart urban-chart"></div>
         </article>
       </section>
-      <footer><span>WORLD POPULATION AND DEMOGRAPHIC ANALYSIS</span></footer>
+      <footer><span>INTERNATIONAL DEMOGRAPHIC RESEARCH REPORT</span><span>Population · Age · Mobility · Cities</span></footer>
     </main>
   </div>
   <script src="./dashboard.js"></script>

@@ -79,7 +79,7 @@ transition:.2s}
 display:inline-block;
 width:26px;
 color:#7f929e;
-font-size:15px}
+font:9px 'DM Mono',monospace}
 .nav:hover,.nav.active {
 background:#17242d;
 border-color:#2a3d49;
@@ -91,10 +91,20 @@ color:var(--green)}
 .sidebar-bottom {
 margin-top:auto;
 display:grid;
-grid-template-columns:1fr 28px 1fr;
+grid-template-columns:1fr;
 align-items:center;
-gap:3px;
 padding-top:20px}
+.research-note {
+border-top:1px solid var(--line);
+padding:14px 10px 0;
+font:9px 'DM Mono',monospace;
+letter-spacing:1px;
+color:var(--green)}
+.research-note small {
+display:block;
+margin-top:7px;
+color:var(--muted);
+letter-spacing:.3px}
 .rival-badge {
 border:1px solid #3c4950;
 padding:10px 7px 8px;
