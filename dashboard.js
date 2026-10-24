@@ -46,15 +46,13 @@ function render(country) {
   const migrationValues = regions.map(n=>numericValue(dataset.countries[n].migration));
   const migrationExtent = Math.max(1, ...migrationValues.map(value=>Math.abs(value))) * 1.2;
   Plotly.react('migrationChart', [{
-    x:migrationValues, y:regions, type:'bar', orientation:'h',
+    x:regions, y:migrationValues, type:'bar',
     marker:{color:regions.map(n=>n===selectedCountry?COLORS.green:(numericValue(dataset.countries[n].migration)>=0?COLORS.blue:COLORS.red))},
     text:migrationValues.map(value=>`${value > 0 ? '+' : ''}${value.toFixed(1)}`),
-    textposition:'auto',
-    insidetextanchor:'middle',
-    textfont:{color:'#081018',size:11},
+    textposition:'outside',
     cliponaxis:false,
-    hovertemplate:'%{y}<br>Net migration: %{x:.1f} per 1,000<extra></extra>'
-  }], layout({margin:{l:105,r:25,t:12,b:35},xaxis:{...baseLayout.xaxis,title:{text:'Net migration per 1,000 people',font:{size:9}},range:[-migrationExtent,migrationExtent],zeroline:true,zerolinecolor:'#f2f5ef',zerolinewidth:2,ticksuffix:' '},yaxis:{...baseLayout.yaxis,autorange:'reversed'}}), config);
+    hovertemplate:'%{x}<br>Net migration: %{y:.1f} per 1,000<extra></extra>'
+  }], layout({margin:{l:35,r:8,t:12,b:65},xaxis:{...baseLayout.xaxis,tickangle:-28},yaxis:{...baseLayout.yaxis,title:{text:'Per 1,000 people',font:{size:9}},range:[-migrationExtent,migrationExtent],zeroline:true,zerolinecolor:'#71818b'}}), config);
   Plotly.react('urbanChart', [{
     x:regions.map(n=>numericValue(dataset.countries[n].urban)),
     y:regions,
