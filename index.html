@@ -173,6 +173,17 @@ font:600 12px Inter;
 outline:none}
 .top-controls select:focus {
 border-color:var(--green)}
+.regenerate-button {
+background:var(--green);
+border:1px solid var(--green);
+color:#081018;
+padding:10px 12px;
+border-radius:6px;
+font:800 10px 'DM Mono',monospace;
+letter-spacing:.5px;
+cursor:pointer}
+.regenerate-button:hover { background:#d7ff82 }
+.regenerate-button:disabled { cursor:wait; opacity:.65 }
 .hero {
 min-height:202px;
 border:1px solid #30434b;
@@ -480,6 +491,7 @@ display:none}
         <div class="top-controls">
           <label for="countrySelect">REGION / COUNTRY</label>
           <select id="countrySelect"><option>World</option></select>
+          <button id="regenerateButton" class="regenerate-button" type="button">REGENERATE ANALYSIS</button>
         </div>
       </header>
 
